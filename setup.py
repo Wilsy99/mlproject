@@ -4,7 +4,7 @@ from typing import List
 
 HYPHEN_E_DOT = "-e ."
 
-def get_requirements(file_path:str)->List[str]:
+def get_requirements(file_path:str) -> List[str]:
     '''
     this function will return the list of requirements
     '''
@@ -18,11 +18,9 @@ def get_requirements(file_path:str)->List[str]:
     
     return requirements
 
-setup(
-    name="mlproject",
-    version="0.0.1",
-    author="Adam Wilson",
-    author_email="adamwilson99@hotmail.com",
-    packages=find_packages(),
-    install_requires=get_requirements("requirements.txt")
-)
+setup(name="mlproject",
+      version="0.0.1",
+      author="Adam Wilson",
+      author_email="adamwilson99@hotmail.com",
+      packages=find_packages(),
+      install_requires=get_requirements("requirements.txt"))
