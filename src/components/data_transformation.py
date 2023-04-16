@@ -11,15 +11,14 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 from src.exception import CustomException
 from src.logger import logging
-from src.components.utils import save_object
-from src.components.data_ingestion import DataIngestion
+from src.utils import save_object
 
 
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path = os.path.join("artifacts", "preprocessor.pkl")
 
-class DataTransormation:
+class DataTransformation:
     def __init__(self):
         self.data_transformation_config = DataTransformationConfig()
 
@@ -99,10 +98,3 @@ class DataTransormation:
         except Exception as exception:
             raise CustomException(exception, sys)
         
-
-if __name__ == "__main__":
-    object = DataIngestion()
-    train_data_path, test_data_path, _ = object.intiate_data_ingestion()
-    
-    data_transformation = DataTransormation()
-    data_transformation.initate_data_transformation(train_data_path, test_data_path)

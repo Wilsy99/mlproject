@@ -44,3 +44,4 @@ class DataIngestion:
                     self.ingestion_config.raw_data_path)
         except Exception as exception:
             raise CustomException(exception, sys)
+        
